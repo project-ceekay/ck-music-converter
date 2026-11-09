@@ -1,0 +1,2 @@
+pillow>=10.0
+mutagen>=1.46

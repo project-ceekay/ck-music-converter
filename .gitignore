@@ -1,0 +1,20 @@
+# Python / build output
+__pycache__/
+*.pyc
+build/
+dist/
+*.spec
+installer/Output/
+
+# Local settings and working files (never published)
+config.json
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+/*.tif
+/*.tiff
+*.backup
+*_backup.py.txt
+bin/
+ecompile.json
