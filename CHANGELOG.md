@@ -21,4 +21,6 @@ First public release.
 - Tags, lyrics and cover art carried over to every output format
 - Several files converted at once; drag and drop files or folders, keeping their folder structure
 - Saves to Music\CK Music Converter by default
+- Smooth window resizing: the window keeps up with the mouse while you drag its edge, and lays
+  itself out once when you let go
 - Built-in updates: checks GitHub once a day and installs new versions in one click

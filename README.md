@@ -1,12 +1,31 @@
-# CK Music Converter
+<p align="center">
+  <img src="docs/icon.png" width="96" height="96" alt="CK Music Converter icon">
+</p>
 
-A music tagger and audio converter in one. Fix the tags and cover art of a whole library the way
-you would in Mp3tag, then convert it to MP3, AAC, ALAC, FLAC, WAV, AIFF, Ogg Vorbis or Opus,
-keeping every tag.
+<h1 align="center">CK Music Converter</h1>
 
-Part of the **CK Suite**, a set of small, free Windows tools by CK Software.
+<p align="center">
+  A music tagger and audio converter in one, for Windows.<br>
+  Fix the tags, lyrics and cover art of a whole library, then convert it to any format and keep all of it.
+</p>
 
-![CK Music Converter](docs/screenshot.png)
+<p align="center">
+  <a href="https://github.com/project-ceekay/ck-music-converter/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/project-ceekay/ck-music-converter?label=release&color=0067c0"></a>
+  <a href="https://github.com/project-ceekay/ck-music-converter/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/project-ceekay/ck-music-converter/total?color=0067c0"></a>
+  <img alt="Windows 10 and 11" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0067c0">
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-0067c0"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/project-ceekay/ck-music-converter/releases/latest"><b>Download</b></a> ·
+  <a href="https://cksoftware.netlify.app/music-converter.html">Website</a> ·
+  <a href="CHANGELOG.md">What's new</a> ·
+  <a href="https://cksoftware.netlify.app/">More CK Software</a>
+</p>
+
+![CK Music Converter showing an album's tracks with their tags, lyrics and cover art](docs/screenshot.png)
+
+Part of the **CK Suite**, a set of small, free Windows tools by [CK Software](https://cksoftware.netlify.app/).
 
 ## Features
 
@@ -23,16 +42,16 @@ Part of the **CK Suite**, a set of small, free Windows tools by CK Software.
 - **Actions:** change case, find and replace (with regular expressions), remove fields, trim spaces
 - **Auto-numbering:** track and total, restarting per folder, with disc numbers by folder
 - **Extended tags:** see and edit every field a file holds
-- **Lyrics** for M4A, MP3, FLAC, Ogg, Opus, WAV, AIFF, WavPack and APE: one Lyrics field, saved the
-  way each format expects (iTunes `©lyr` atom, ID3 `USLT` frame, `LYRICS` Vorbis comment, ID3 chunk in
-  WAV/AIFF, APEv2). Load them from a `.txt` or `.lrc` file.
-- **WAV and AIFF tags** are stored in an ID3 chunk, as Mp3tag and iTunes do
+- **Lyrics:** one Lyrics field, saved the way each format expects (see the table below). Load them
+  from a `.txt` or `.lrc` file.
 - **MusicBrainz lookup:** find the album and fill in titles, track numbers, year, album artist and
   genre, plus the front cover from the Cover Art Archive
 - **Copy tags from tracks you already have:** pair new audio (e.g. FLAC masters) with a tagged
   album by track number and title
 - **Cover art:** add, extract or remove, or drop an image on the window
 - **Export tags to CSV**
+
+![Editing the tags of three files at once](docs/tags.png)
 
 ### Converting
 - **Any audio in:** MP3, M4A/AAC, FLAC, WAV, AIFF, Ogg, Opus, WMA, WavPack, APE and more, or the
@@ -49,7 +68,23 @@ Part of the **CK Suite**, a set of small, free Windows tools by CK Software.
 
 FFmpeg is included in the installer, so there's nothing else to install.
 
-![Editing the tags of several files at once](docs/tags.png)
+### Comfortable to use
+- **Smooth window resizing:** the window keeps up with the mouse while you drag its edge and lays
+  itself out once when you let go
+- **Drag and drop** files, folders and cover images straight onto the window
+- **Keyboard shortcuts** for the common actions (see below)
+
+### Where tags and lyrics are stored
+
+| Format | Tags | Lyrics |
+|---|---|---|
+| M4A / AAC / ALAC | iTunes MP4 atoms | `©lyr` atom |
+| MP3 | ID3v2 | `USLT` frame |
+| FLAC, Ogg Vorbis, Opus | Vorbis comments | `LYRICS` comment |
+| WAV, AIFF | ID3 chunk (as Mp3tag and iTunes do) | `USLT` frame in the ID3 chunk |
+| WavPack, APE | APEv2 | `Lyrics` item |
+
+Tags are saved safely: a failed save never leaves a half-written file.
 
 ## Download
 
@@ -78,6 +113,19 @@ skips a part, and `\` matches folder names.
 Folder…** and pick the folder with the tagged tracks. Each file is paired by track number, then by
 title, and gets that track's tags and artwork.
 
+### Keyboard shortcuts
+
+| Keys | Action |
+|---|---|
+| Ctrl+O | Add files |
+| Ctrl+D | Add a folder |
+| Ctrl+S | Save tags |
+| Ctrl+Z | Undo |
+| F5 | Reload tags from the files |
+| Ctrl+A | Select all files |
+| Delete | Remove the selected files from the list |
+| Ctrl+Enter (in Lyrics) | Apply the lyrics |
+
 ## Updates
 
 The program checks GitHub for a new version once a day. When one is available, a link appears at
@@ -86,20 +134,42 @@ kept. You can turn the automatic check off under **About**.
 
 Settings are stored in `%APPDATA%\CK Suite\Music Converter`.
 
+## Privacy
+
+CK Music Converter only goes online when you ask it to, and for the daily update check:
+
+- **Update check:** GitHub's releases API (can be turned off under **About**)
+- **MusicBrainz lookup:** [MusicBrainz](https://musicbrainz.org/) and the
+  [Cover Art Archive](https://coverartarchive.org/), only when you use **Tag Sources → MusicBrainz…**
+
+Nothing else is sent anywhere. Your files are processed on your own computer.
+
 ## Run or build from source
 
-Requires Python 3.10 or newer and FFmpeg (ffmpeg.exe and ffprobe.exe in a `bin` folder next to the
-script, or on your PATH).
+Requires Python 3.10 or newer and FFmpeg (`ffmpeg.exe` and `ffprobe.exe` in a `bin` folder next to
+the script, or on your PATH).
 
 ```
 pip install -r requirements.txt
 python program.py
 ```
 
-Releases are built automatically by GitHub Actions when a version tag (`v1.2.3`) is pushed; see
-[`.github/workflows/release.yml`](.github/workflows/release.yml) and [`installer/setup.iss`](installer/setup.iss).
+To build the installer yourself: `pip install pyinstaller`, run the PyInstaller command from
+[`.github/workflows/release.yml`](.github/workflows/release.yml), copy FFmpeg into the app's `bin`
+folder, then compile [`installer/setup.iss`](installer/setup.iss) with
+[Inno Setup](https://jrsoftware.org/isinfo.php). Releases are built automatically by GitHub Actions
+when a version tag (`v1.2.3`) is pushed.
+
+## Credits
+
+- [FFmpeg](https://ffmpeg.org/) does the audio decoding and encoding
+- [mutagen](https://github.com/quodlibet/mutagen) reads and writes the tags
+- Album data from [MusicBrainz](https://musicbrainz.org/), cover art from the
+  [Cover Art Archive](https://coverartarchive.org/)
 
 ## License
 
-[MIT](LICENSE) © CK Software. Bundled third-party components are listed in
-[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+CK Music Converter's own code is [MIT](LICENSE) licensed, © CK Software.
+
+The installer also bundles FFmpeg (GPL-3.0) and mutagen (GPL-2.0-or-later), among others. Their
+licenses and sources are listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
