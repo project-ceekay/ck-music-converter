@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.1
+
+- Classic top menu bar (`File`, `Edit`, `View`, `Convert`, `Actions`, `Tag Sources`, `Help`) and compact icon toolbar with hover tooltips
+- Added Dark Mode (`View -> Dark Mode` or toolbar moon button), saved in settings
+- Full-height vertical column lines extending all the way down the right-hand file viewer box
+- Window title bar now shows the active folder path
+- Added Mp3tag keyboard shortcuts (`Alt+1` Tag → Filename, `Alt+2` Filename → Tag, `Alt+3` Tag → Tag, `Alt+T` Extended Tags, `Ctrl+K` Auto-Number, `Ctrl+M` MusicBrainz, `F3` Filter toggle, `Ctrl+Enter` Convert Audio)
+- Split codebase into modular files (`program.py`, `ui_kit.py`, `tagger.py`, `lyrics.py`, `converter.py`)
+
 ## 1.0.0
 
 First public release.

@@ -69,6 +69,11 @@ Part of the **CK Suite**, a set of small, free Windows tools by [CK Software](ht
 FFmpeg is included in the installer, so there's nothing else to install.
 
 ### Comfortable to use
+- **Classic menu bar and icon toolbar:** Mp3tag-style menus (`File`, `Edit`, `View`, `Convert`,
+  `Actions`, `Tag Sources`, `Help`), compact toolbar icons with hover tooltips, active folder path
+  in the title bar, and full-height column gridlines
+- **Light and Dark Mode:** switch between Light Mode and Dark Mode any time from **View → Dark Mode**
+  or the moon icon on the toolbar
 - **Smooth window resizing:** the window keeps up with the mouse while you drag its edge and lays
   itself out once when you let go
 - **Drag and drop** files, folders and cover images straight onto the window
@@ -98,11 +103,12 @@ get the `…-Setup.exe` file under *Assets* and run it.
 
 ## How to use it
 
-1. Drop music files or folders onto the window (or click **Add Folder…** / **Add Files…**).
-2. Select files and edit their tags on the **Tags** tab, or use the **Convert Names**, **Actions**
-   and **Tag Sources** menus. Press **Save** (Ctrl+S) to write the tags into the files.
-3. To convert, pick a preset or settings on the **Convert** tab and click **Convert**. It converts
-   the selected files, or all of them when none are selected. The results appear in
+1. Drop music files or folders onto the window (or use **File → Add directory…** (`Ctrl+D`) /
+   **File → Add files…** (`Ctrl+O`) or the folder buttons on the toolbar).
+2. Select files and edit their tags on the **Tags** tab, or use the **Convert**, **Actions**
+   and **Tag Sources** menus. Press **Save** (`Ctrl+S`) to write the tags into the files.
+3. To convert, pick a preset or settings on the **Convert** tab and click **Convert** (`Ctrl+Enter`).
+   It converts the selected files, or all of them when none are selected. The results appear in
    `Music\CK Music Converter` (or wherever you chose); double-click one in the list to play it.
 
 **Format strings** use placeholders such as `%artist%`, `%title%`, `%album%`, `%year%`, `%track%`
@@ -121,10 +127,17 @@ title, and gets that track's tags and artwork.
 | Ctrl+D | Add a folder |
 | Ctrl+S | Save tags |
 | Ctrl+Z | Undo |
+| Alt+1 | Tag → Filename |
+| Alt+2 | Filename → Tag |
+| Alt+3 | Tag → Tag |
+| Alt+T | Extended Tags |
+| Ctrl+K | Auto-number tracks |
+| Ctrl+M | MusicBrainz lookup |
+| F3 | Show / hide the filter bar |
 | F5 | Reload tags from the files |
 | Ctrl+A | Select all files |
 | Delete | Remove the selected files from the list |
-| Ctrl+Enter (in Lyrics) | Apply the lyrics |
+| Ctrl+Enter | Convert audio now (or apply lyrics when in the Lyrics box) |
 
 ## Updates
 
