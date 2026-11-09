@@ -243,7 +243,8 @@ def smooth_resize(root, settle_ms=120):
         if shown is None:
             return  # just resize normally
         # the sections are still laid out for the old size; a strip lost to shrinking shows as background
-        image = Image.new("RGB", (old_w, old_h), tuple(c >> 8 for c in root.winfo_rgb(bg)))
+        cur_bg = ttk.Style(root).lookup("TFrame", "background") or bg
+        image = Image.new("RGB", (old_w, old_h), tuple(c >> 8 for c in root.winfo_rgb(cur_bg)))
         image.paste(shown.crop((0, 0, min(w, old_w), min(h, old_h))))
         # everything from the first bottom-packed section down stays pinned to the bottom edge
         split = min([w.winfo_y() for w, info in slaves if info.get("side") == "bottom"] or [old_h])
@@ -251,7 +252,7 @@ def smooth_resize(root, settle_ms=120):
                            ((0, split, old_w, old_h), dict(x=0, rely=1, anchor="sw"))):
             if box[3] > box[1]:
                 photo = ImageTk.PhotoImage(image.crop(box))
-                shot = tk.Label(root, image=photo, bd=0, highlightthickness=0, bg=bg)
+                shot = tk.Label(root, image=photo, bd=0, highlightthickness=0, bg=cur_bg)
                 shot.image = photo
                 shot.place(**place)
                 state["shots"].append(shot)
